@@ -22,8 +22,11 @@ if 9 in stuff :
     print (True)
 else :
     print (False)
-    
+
 if 16 in stuff :
     print (True)
 else :
     print (False)
+
+#you can also do operations on a list
+print(sum(c))
