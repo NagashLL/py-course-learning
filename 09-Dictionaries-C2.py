@@ -1,5 +1,8 @@
+
+
 name = input ('Enter file:')
 handle = open (name)
+
 
 counts = dict()
 for line in handle :
@@ -15,5 +18,5 @@ for word, count in counts.items():
         bigcount = count
 
 
-print (words.keys())
+
 print (bigword, bigcount)
