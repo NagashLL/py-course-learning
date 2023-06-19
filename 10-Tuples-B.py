@@ -14,7 +14,18 @@ tmp = list()
 
 for k, v in d.items():
     tmp.append( (v, k))
+#we create a new data structure where the values are first, and then keys
+
 
 print ('unsorted:', tmp)
+#here we just showcase the unsorted temp list
 
-tmp 
+
+tmp = sorted(tmp, reverse= True)
+#we use the sorted function to sort the list by VALUES going BIG to SMALL (because reverse = True)
+
+print('sorted:',tmp)
+#here we just show the resulted, sorted list
+
+import os
+print(os.getcwd())
