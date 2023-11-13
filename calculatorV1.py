@@ -39,36 +39,49 @@ class indent:
                         else:
                             self.x = "     " + self.x
 
-test = aa("12 - 14")
+#this class adds the amount of spaces based on the desired amount
+class spacedout:
+    todo = int()
+    def __init__(self,y):
+        self.todo = y
+     #   if self.todo = 6:
+
+test = aa("111 + 999")
 
 print(test.counts)
 
 #if index is even put it into numbers list, else put it into operators list
-tmp = list()
-operator = test.arranged[1:2]
+
+operator = [str(i) for i in test.arranged[1:2]]
+operator = str(operator)
+
 fv = [float(i) for i in test.arranged[0:1]]
+fv = float(str(fv).strip("[]"))
+
+
 sv = [float(i) for i in test.arranged[2:3]]
-print (type(fv))
-print (type(sv))
-if operator == ["+"]:
+sv = float(str(sv).strip("[]"))
+
+if ('+' in operator):
     print("its a plus")
     check = True
 else:
-    if operator == ["-"]:
+    if ('-' in operator):
         print("its a minus")
         check = True
     else:
         print("ERROR")
         check = False
 
+
 if check == True:
-    if operator == ["+"]:
+    if ('+' in operator):
         result = (fv + sv)
     else:
         result = (fv - sv)
 print(result)
 
-print(operator)
+
 
 
 
@@ -76,8 +89,7 @@ test2 = even(13)
 print(test2.result)
 print(even(13).result)
 
-test3 = indent(1234)
-print(test3.x)
+test3 = indent(123)
 
 
 
@@ -86,24 +98,24 @@ print(test3.x)
 
 
 
-
-x = "xxxx"
-y = "yyy"
-o = "o"
 r = "rrrr"
 
-print(len(x),len(y))
+fsv = indent(int(fv))
+ssv = str(operator.strip("[]'")) + str(int(sv))
+resulted = indent(str(int(result)))
 
-if len(x) == 4 or len(y) == 4:
-    print("  ",x,"\n",
-          o," ",y,"\n",
-          "------","\n",
-          "  ",r,
-          sep="")
-else:
-    if len(x) == 3 or len(y) == 3:
-        print("  ",x,y,sep="")
-    else:
-        if len(x) == 2 or len(y) == 2:
-            print(  o,r,sep="")
+mood = [len(str(int(fv))),len(str(int(sv))),len(str(int(result)))]
 
+print(mood)
+desired = max(mood)
+
+print(desired)
+
+#based on desired, lstrip fsv , ssv and resulted
+
+done = [str(fsv.x),"\n", ssv,"\n","------","\n",resulted.x]
+did = ""
+for v in done:
+    did = did + v
+
+print(did)
